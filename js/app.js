@@ -15,11 +15,16 @@ window.addEventListener("DOMContentLoaded", () =>{
     },
     methods: {
       onAddClick(){
-        this.tasksList.push({
-          text: this.newTodoText.trim(),
-          checked: false,
-        });
-        this.newTodoText = "";
+
+        if(this.newTodoText === ""){
+          return
+        } else{
+          this.tasksList.push({
+            text: this.newTodoText.toLowerCase().trim(),
+            checked: false,
+          });
+          this.newTodoText = "";
+        }
       },
       onRemoveClick(indexToRemove){
         this.tasksList.splice(indexToRemove, 1);
