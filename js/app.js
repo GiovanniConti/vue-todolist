@@ -15,17 +15,25 @@ window.addEventListener("DOMContentLoaded", () =>{
     },
     methods: {
       onAddClick(){
-
         if(this.newTodoText === ""){
-          return
-        } else{
-          this.tasksList.push({
-            text: this.newTodoText.toLowerCase().trim(),
-            checked: false,
-          });
-          this.newTodoText = "";
+          return;
         }
+
+        const existingTask = this.tasksList.some((el) => {
+          return el.text.toLowerCase() === this.newTodoText.trim().toLowerCase();
+        });
+
+        if(existingTask){
+          return;
+        }
+
+        this.tasksList.push({
+          text: this.newTodoText.trim(),
+          checked: false,
+        });
+        this.newTodoText = "";
       },
+
       onRemoveClick(indexToRemove){
         this.tasksList.splice(indexToRemove, 1);
       },
