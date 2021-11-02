@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () =>{
           text: this.newTodoText.trim(),
           checked: false,
         });
+        this.newTodoText = "";
       },
       onRemoveClick(indexToRemove){
         this.tasksList.splice(indexToRemove, 1);

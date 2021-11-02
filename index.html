@@ -16,10 +16,10 @@
     <h1 class="text-center p-4">Hello Vueoolean - Todolist</h1>
 
     <section class="text-center">
-      <input type="text" placeholder="Vorrei..." class="col-3 p-1 align-middle" v:model="newTodoText" v-on:keyup.enter="onAddClick">
+      <input type="text" placeholder="Vorrei..." class="col-3 p-1 align-middle" v-model="newTodoText" v-on:keyup.enter="onAddClick">
       <button type="button" class="btn btn-outline-primary" @click="onAddClick">Aggiungi</button>
 
-      <div class="w-50 m-auto list-group d-flex flex-row text-start align-items-center" v-for="(task, i) in tasksList">
+      <div class="w-50 m-auto list-group d-flex flex-row text-start align-items-center mt-4" v-for="(task, i) in tasksList">
         <label class="list-group-item flex-fill">
           <input class="form-check-input me-1 " type="checkbox">
           {{i + 1}} {{task.text}}
